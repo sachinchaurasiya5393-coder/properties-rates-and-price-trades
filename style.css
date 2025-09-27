@@ -1,0 +1,668 @@
+/* google font  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+/* google font  */
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+   
+
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* navbar style  */
+nav {
+    width: 100%;
+    max-width: 1980px;
+    position: absolute;
+    inset: 0 0 100% 0;
+
+}
+
+nav .container {
+    width: 90%;
+    margin: 0 auto;
+    min-height: 80px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.nav-list {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: opacity 300ms ease;
+}
+
+.list-item:hover {
+    opacity: 0.8;
+}
+
+.contact {
+    background-color: #505050;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+}
+
+
+.mobile-menu{
+    display: none;
+}
+/* navbar style  */
+
+.header {
+    width: 100%;
+    max-width: 1980px;
+    background-image: url(./images/banner1.png);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+
+}
+
+.header .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header-info {
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    z-index: 2;
+
+}
+
+.header-headline {
+    font-size: 6rem;
+    text-align: center;
+    font-weight: 900;
+    line-height: 110%;
+    text-transform: capitalize;
+    color: white;
+    padding-block: 1rem;
+}
+
+.header-subtitle {
+    font-size: 1.5rem;
+    width: 60%;
+    text-align: center;
+    color: #f1f1f1;
+    text-transform: capitalize;
+    padding-bottom: 2rem;
+}
+
+.cta {
+    width: 200px;
+    background-color: #505050;
+    color: #fff;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
+form {
+    max-width: 1980px;
+    width: 100%;
+    margin-top: -50px;
+}
+
+form .container {
+    width: 80%;
+    margin-inline: auto;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px rgba(80, 80, 80, 0.30);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 100px;
+    gap: 2rem;
+    border-radius: 0.6rem;
+}
+
+.input {
+    flex-basis: 22%;
+    background-color: transparent;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.3px solid rgba(80, 80, 80, .30);
+    padding: 0.5rem 0;
+    border-radius: 5px;
+}
+
+.input input {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 1rem;
+
+}
+
+.input select {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 1rem;
+    width: 100%;
+    padding: 0 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* visually hidden for accessibility but available to screen readers */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+.search {
+    background-color: #505050;
+    flex-basis: 15%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 300ms;
+
+}
+
+.search>* {
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+.search:hover {
+    opacity: 0.8;
+}
+
+
+/* product  */
+
+/* -----------------------------
+   Additional page polish styles
+   (header overlay, nav polish, inputs, cards)
+   ----------------------------- */
+
+/* site container (used across pages) */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* make nav easier to read on top of banner */
+nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 50;
+    padding: 1rem 0;
+}
+
+/* subtle backdrop for nav links on very light banners */
+.nav-list {
+    backdrop-filter: saturate(1.05) blur(2px);
+}
+
+/* header overlay to improve text contrast */
+.header {
+    position: relative;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.15) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.header .header-info {
+    position: relative;
+    z-index: 2;
+}
+
+/* inputs: better alignment and focus state */
+.input {
+    align-items: center;
+}
+
+.input img {
+    width: 22px;
+    height: auto;
+    opacity: 0.9;
+    margin-left: 0.75rem;
+}
+
+.input select,
+.input input[type="text"] {
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    box-sizing: border-box;
+}
+
+.input:focus-within {
+    box-shadow: 0 6px 20px rgba(80, 80, 80, 0.06);
+    border-color: rgba(80,80,80,0.55);
+}
+
+/* product cards: consistent image heights and nicer hover */
+.product-card {
+    transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.product-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 300ms ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(80,80,80,0.18);
+}
+
+.price p {
+    color: #222;
+    font-weight: 700;
+}
+
+.booking-btn {
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 200ms ease, transform 120ms ease;
+}
+
+.booking-btn:hover {
+    background-color: #3f3f3f;
+    transform: translateY(-2px);
+}
+
+.product-info .product-btn img {
+    width: 18px;
+    margin-left: 0.5rem;
+}
+
+/* small helpers */
+.loaction-name {
+    font-weight: 600;
+    color: #505050;
+}
+
+.cta {
+    transition: background-color 200ms ease, transform 150ms ease;
+}
+.cta:hover {
+    background-color: #3f3f3f;
+    transform: translateY(-3px);
+}
+
+/* improve accessibility focus outlines */
+a:focus,
+button:focus,
+input:focus,
+select:focus {
+    outline: 3px solid rgba(80,80,80,0.15);
+    outline-offset: 2px;
+}
+
+/* small responsive tweak for medium screens */
+@media (max-width: 900px) {
+    .product-img { height: 200px; }
+    .header-headline { font-size: 3.2rem; }
+}
+
+/* Payment page specific styles */
+.payment-hero {
+    background-image: url(./images/banner.png);
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+    position: relative;
+}
+
+.payment-hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.15) 100%);
+    z-index: 1;
+}
+
+.payment-box{
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 1.2rem 1.4rem;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.payment-box h1{ font-size: 1.6rem; }
+.payment-box .muted{ color: #444; margin-top: 0.25rem }
+
+.tabs-row{ display:flex; gap:0.6rem; }
+.tab{ flex:1; padding:0.6rem 0.6rem; border-radius:6px; background:#f3f3f3; border:0; cursor:pointer; font-weight:600 }
+.tab.active{ background:#505050; color:#fff }
+
+.panel{ margin-top:1rem }
+.panel label{ display:block; margin-top:0.6rem; font-size:0.95rem; color:#333 }
+.panel input{ width:100%; padding:0.6rem; margin-top:0.25rem; border-radius:6px; border:1px solid #e6e6e6 }
+
+.panel .row input{ width:100% }
+
+.result{ margin-top:1rem; font-weight:700 }
+.form-msg{ margin-top:0.4rem; min-height:18px }
+
+@media (max-width:600px){
+    .payment-box{ padding:1rem; margin: 0 1rem }
+    .tabs-row{ flex-direction:row }
+}
+
+/* Contact hero + centered contact box (distinct from login-box) */
+.contact-hero{
+    background-image: url(./images/banner1.png);
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+    position: relative;
+}
+.contact-hero::after{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.12)); z-index:1 }
+
+.contact-box{
+    position: relative;
+    z-index:2;
+    max-width:700px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.98);
+    padding: 1.4rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.contact-box h2{ font-size:1.4rem; }
+.contact-box form{ display:flex; flex-direction:column; gap:0.6rem }
+.contact-box label{ font-weight:600; color:#333 }
+.contact-box input, .contact-box textarea{ font-size:1rem }
+
+@media (max-width:600px){ .contact-box{ margin: 0 1rem; padding:1rem } }
+
+/* listings on property.html should match compact index product sizing */
+#listings .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* match the homepage product sizing */
+#listings .product-card {
+    flex-basis: 28%;
+    max-width: 360px;
+}
+
+#listings .product-img {
+    height: 220px;
+}
+
+/* typography and button sizes match homepage */
+#listings .card-info p,
+#listings .content p { font-size: 1rem; }
+#listings .price p { font-size: 1.5rem; }
+#listings .loaction-name { font-size: 1rem }
+#listings .booking-btn { font-size: 1rem; padding: 0.5rem 0.5rem }
+
+@media (max-width: 900px) {
+    #listings .product-card { flex-basis: 48%; }
+    #listings .product-img { height: 180px; }
+}
+
+@media (max-width: 600px) {
+    #listings .product-card { flex-basis: 100%; }
+    #listings .product-img { height: 160px; }
+}
+
+#product {
+    width: 100%;
+    max-width: 1980px;
+    padding-block: 4rem;
+}
+
+.product-info {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.product-info .product-title {
+    font-size: 2.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #505050;
+    width: 70%;
+}
+
+.product-btn {
+    background-color: transparent;
+    color: #505050;
+    font-size: 1.5rem;
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    min-height: 20px;
+    transition: color 300ms;
+}
+
+.product-btn:hover {
+    color: #000;
+}
+
+#product .container {
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.product-card {
+    flex-basis: 28%;
+    /* background-color: royalblue; */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    /* border: 0.5px solid rgba(80, 80, 80, 0.30); */
+    box-shadow: 0px 5px 10px rgba(80, 80, 80, 0.20);
+    padding-bottom: 1rem;
+    overflow: hidden;
+
+}
+
+.product-card:hover .product-img{
+    transform: scale(1.035);
+}
+
+.product-img {
+    flex-basis: 100%;
+    object-fit: cover;
+    transition:  300ms ease;
+}
+
+.card-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    /* background-color: red; */
+    width: 100%;
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+
+.card-info-content {
+    display: flex;
+    text-transform: uppercase;
+    min-height: 20px;
+    justify-self: center;
+    align-items: center;
+    gap: 0.5rem;
+    /* background-color: yellow; */
+    width: 90%;
+    margin-inline: auto;
+
+}
+
+.content {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: start;
+    min-height: 20px;
+    align-items: center;
+}
+
+.content p {
+    font-size: 1rem;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-inline: auto;
+
+    gap: 10px;
+
+}
+
+.price p {
+    font-size: 1.5rem;
+    flex-basis: 30%;
+
+}
+
+.booking-btn {
+    color: #fff;
+    background-color: #505050;
+    flex-basis: 50%;
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+
+/* product  */

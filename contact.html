@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact - T.Home</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./media.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">T.Home</div>
+      <ul class="nav-list ">
+        <li><a href="./property.html" class="list-item">Property</a></li>
+        <li><a href="./service.html" class="list-item">Service</a></li>
+        <li><a href="./aboutus.html" class="list-item">About us</a></li>
+        <li><a href="./contact.html" class="list-item">Contact us</a></li>
+        <li><a href="./login.html" class="list-item contact">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="header" style="height:60vh;">
+    <div class="container">
+      <div class="header-info">
+        <h1 class="header-headline">Contact</h1>
+        <p class="header-subtitle">Get in touch with us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="header contact-hero">
+    <div class="container">
+      <div class="contact-box" role="region" aria-label="Contact form">
+        <h2 style="margin:0 0 0.5rem 0;">Contact Us</h2>
+        <p style="color:#555;margin-bottom:0.75rem;">Have a question or need help listing/booking? Send us a message and we will reply shortly.</p>
+
+        <form id="contact-form">
+          <label for="contact-name">Full name</label>
+          <input id="contact-name" type="text" placeholder="Your name" required>
+
+          <label for="contact-email">Email</label>
+          <input id="contact-email" type="email" placeholder="you@example.com" required>
+
+          <label for="contact-subject">Subject</label>
+          <input id="contact-subject" type="text" placeholder="Subject" required>
+
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" rows="5" placeholder="Write your message" style="padding:0.6rem;border-radius:6px;border:1px solid rgba(80,80,80,0.2);"></textarea>
+
+          <div class="form-msg" id="contact-msg" aria-live="polite"></div>
+          <button class="cta" type="submit" style="margin-top:0.6rem;">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const msg = document.getElementById('contact-msg');
+      msg.textContent = 'Thank you — your message has been sent (demo). We will reply to your email.';
+      msg.classList.add('success');
+      // clear form after a short delay
+      setTimeout(()=>{
+        document.getElementById('contact-form').reset();
+      },1200);
+    });
+  </script>
+
+  <script src="./app.js"></script>
+</body>
+</html>

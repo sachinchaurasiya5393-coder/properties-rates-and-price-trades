@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Property Details - T.Home</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">T.Home</div>
+            <ul class="nav-list ">
+                <li><a href="./property.html" class="list-item">Property</a></li>
+                <li><a href="./service.html" class="list-item">Service</a></li>
+                <li><a href="./aboutus.html" class="list-item">About us</a></li>
+                <li><a href="./contact.html" class="list-item">Contact us</a></li>
+                <li><a href="./login.html" class="list-item contact">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding:3.5rem 0;">
+        <div class="container">
+            <!-- Hero / gallery -->
+            <section class="product-hero" style="display:flex;gap:1.2rem;align-items:flex-start;flex-wrap:wrap;">
+                <div style="flex:1;min-width:320px;">
+                    <img id="detail-main-img" src="./images/house1.png" alt="House exterior" style="width:100%;height:420px;object-fit:cover;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.12);">
+                    <div style="display:flex;gap:0.6rem;margin-top:0.8rem;">
+                        <img src="./images/house2.png" alt="alt1" style="width:100px;height:70px;object-fit:cover;border-radius:6px;">
+                        <img src="./images/house3.png" alt="alt2" style="width:100px;height:70px;object-fit:cover;border-radius:6px;">
+                        <img src="./images/banner.png" alt="alt3" style="width:100px;height:70px;object-fit:cover;border-radius:6px;">
+                    </div>
+                </div>
+
+                <aside style="width:420px;max-width:40%;min-width:260px;">
+                    <div class="product-card" style="padding:1.2rem;">
+                        <h1 id="detail-title" style="margin:0 0 0.5rem 0;">Beautiful 4 Bed House in Mumbai</h1>
+                        <p id="detail-location" style="margin:0.2rem 0;color:#555">Mumbai, India • 10x10m • 14000M</p>
+                        <p id="detail-price" style="margin:0.6rem 0;font-size:1.3rem;font-weight:700;">₹44,820,000</p>
+
+                        <div style="margin:0.6rem 0;">
+                            <h3 style="margin:0 0 0.4rem 0;font-size:1rem;">Key features</h3>
+                            <ul style="padding-left:1.1rem;color:#444">
+                                <li>4 Bedrooms • 3 Bathrooms</li>
+                                <li>Large living area & modern kitchen</li>
+                                <li>Private garden and parking</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="product-card" style="padding:0.8rem;margin-top:1rem;">
+                        <h4 style="margin:0 0 0.6rem 0;">Contact owner</h4>
+                        <p style="margin:0.2rem 0;color:#333">Mr. Rahul Sharma</p>
+                        <p style="margin:0.2rem 0;color:#555">Phone: +91 98765 43210</p>
+                        <a href="tel:+919876543210" class="booking-btn" style="display:inline-block;margin-top:0.6rem;">Call Owner</a>
+                    </div>
+                </aside>
+            </section>
+
+            <!-- Description and amenities -->
+            <section style="margin-top:2rem;display:flex;gap:1.2rem;flex-wrap:wrap;">
+                <div style="flex:1;min-width:320px;">
+                    <h2>About this property</h2>
+                    <p style="color:#333">This spacious family home is located in a friendly neighbourhood with easy access to schools, shopping and public transport. It offers a modern kitchen, bright living spaces and a private garden ideal for weekend gatherings.</p>
+
+                    <h3 style="margin-top:1rem;">Amenities</h3>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.6rem;">
+                        <div style="flex-basis:140px;background:#fff;padding:0.6rem;border-radius:8px;box-shadow:0 6px 12px rgba(0,0,0,0.04);">Parking</div>
+                        <div style="flex-basis:140px;background:#fff;padding:0.6rem;border-radius:8px;box-shadow:0 6px 12px rgba(0,0,0,0.04);">Garden</div>
+                        <div style="flex-basis:140px;background:#fff;padding:0.6rem;border-radius:8px;box-shadow:0 6px 12px rgba(0,0,0,0.04);">Nearby Schools</div>
+                        <div style="flex-basis:140px;background:#fff;padding:0.6rem;border-radius:8px;box-shadow:0 6px 12px rgba(0,0,0,0.04);">24/7 Security</div>
+                    </div>
+                </div>
+
+                <div style="width:320px;min-width:260px;">
+                    <div class="product-card" style="padding:1rem;">
+                        <h3 style="margin-top:0;">Booking summary</h3>
+                        <p style="margin:0.4rem 0;color:#555">Property: <span id="detail-booking-property">4 Bed House — Mumbai</span></p>
+                        <p style="margin:0.4rem 0;font-weight:700;font-size:1.1rem">Total: <span id="detail-booking-total">₹44,820,000</span></p>
+                        <a id="detail-pay-link" href="./payment.html" class="cta" style="display:block;text-align:center;margin-top:0.8rem;">Pay & Confirm Booking</a>
+                    </div>
+
+                    <div style="margin-top:1rem;">
+                        <h4>Reviews</h4>
+
+                        <div id="detail-error" class="product-card" style="padding:0.9rem;margin-top:0.6rem;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <div>
+                                    <strong>Priya Menon</strong>
+                                    <div style="font-size:0.9rem;color:#666">Bengaluru • <span style="color:#ffb400">★★★★☆</span></div>
+                                </div>
+                                <div style="font-size:0.85rem;color:#888">Aug 12, 2025</div>
+                            </div>
+                            <p style="margin-top:0.6rem;color:#444">Lovely home and very well maintained. The neighbourhood is quiet and schools are nearby — perfect for our family.</p>
+                        </div>
+
+                        <div class="product-card" style="padding:0.9rem;margin-top:0.6rem;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <div>
+                                    <strong>Arjun Patel</strong>
+                                    <div style="font-size:0.9rem;color:#666">Ahmedabad • <span style="color:#ffb400">★★★★★</span></div>
+                                </div>
+                                <div style="font-size:0.85rem;color:#888">Jul 30, 2025</div>
+                            </div>
+                            <p style="margin-top:0.6rem;color:#444">Great value for money. The booking process was smooth and the owner was responsive. Recommend to anyone looking in this area.</p>
+                        </div>
+
+                        <div class="product-card" style="padding:0.9rem;margin-top:0.6rem;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <div>
+                                    <strong>Sanya Kapoor</strong>
+                                    <div style="font-size:0.9rem;color:#666">Mumbai • <span style="color:#ffb400">★★★★☆</span></div>
+                                </div>
+                                <div style="font-size:0.85rem;color:#888">Jun 15, 2025</div>
+                            </div>
+                            <p style="margin-top:0.6rem;color:#444">Spacious rooms and a lovely garden — enjoyed our stay. A small issue with water pressure but owner fixed it quickly.</p>
+                        </div>
+
+                        <div class="product-card" style="padding:0.9rem;margin-top:0.6rem;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <div>
+                                    <strong>Vikram Singh</strong>
+                                    <div style="font-size:0.9rem;color:#666">New Delhi • <span style="color:#ffb400">★★★☆☆</span></div>
+                                </div>
+                                <div style="font-size:0.85rem;color:#888">May 02, 2025</div>
+                            </div>
+                            <p style="margin-top:0.6rem;color:#444">Good location but a bit more renovation would help. Overall a decent stay for short-term families.</p>
+                        </div>
+
+                        <div class="product-card" style="padding:0.9rem;margin-top:0.6rem;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <div>
+                                    <strong>Meera Iyer</strong>
+                                    <div style="font-size:0.9rem;color:#666">Chennai • <span style="color:#ffb400">★★★★★</span></div>
+                                </div>
+                                <div style="font-size:0.85rem;color:#888">Apr 20, 2025</div>
+                            </div>
+                            <p style="margin-top:0.6rem;color:#444">Excellent host and clean property. The photos matched perfectly with the actual house. Would book again.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="./api.js"></script>
+ </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Payment - T.Home</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">T.Home</div>
+            <ul class="nav-list ">
+                <li><a href="./property.html" class="list-item">Property</a></li>
+                <li><a href="./service.html" class="list-item">Service</a></li>
+                <li><a href="./aboutus.html" class="list-item">About us</a></li>
+                <li><a href="./contact.html" class="list-item">Contact us</a></li>
+                <li><a href="./login.html" class="list-item contact">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="header payment-hero">
+        <div class="container">
+            <div class="payment-box">
+                <h1 style="margin-top:0;">Secure Payment</h1>
+                <p class="muted">Pay securely using UPI or Card. This demo validates inputs locally — no money will be charged.</p>
+
+                <div class="tabs-row" style="margin-top:1rem;">
+                    <button id="tab-upi" class="tab active" type="button">UPI</button>
+                    <button id="tab-card" class="tab" type="button">Card</button>
+                </div>
+
+                <div id="upi-panel" class="panel">
+                    <form id="upi-form">
+                        <label for="upi-id">UPI ID</label>
+                        <input id="upi-id" type="text" placeholder="yourname@bank" required>
+                        <div class="form-msg" id="upi-msg" aria-live="polite"></div>
+                        <button class="cta" type="submit">Pay with UPI</button>
+                    </form>
+                </div>
+
+                <div id="card-panel" class="panel" style="display:none;">
+                    <form id="card-form">
+                        <label for="card-number">Card number</label>
+                        <input id="card-number" type="text" inputmode="numeric" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+
+                        <div class="row" style="gap:0.6rem;display:flex;">
+                            <div style="flex:1;">
+                                <label for="card-expiry">Expiry (MM/YY)</label>
+                                <input id="card-expiry" type="text" placeholder="MM/YY" maxlength="5" required>
+                            </div>
+                            <div style="width:110px;">
+                                <label for="card-cvv">CVV</label>
+                                <input id="card-cvv" type="password" maxlength="4" placeholder="123" required>
+                            </div>
+                        </div>
+
+                        <div class="form-msg" id="card-msg" aria-live="polite"></div>
+                        <button class="cta" type="submit">Pay with Card</button>
+                    </form>
+                </div>
+
+                <div id="payment-result" class="result"></div>
+
+                <p style="margin-top:1rem;color:#666">If you're not signed in, you'll be asked to log in or register during the process.</p>
+                <a href="./index.html" class="cta" style="margin-top:0.8rem;display:inline-block;">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    // Tabs
+    const tabUpi = document.getElementById('tab-upi');
+    const tabCard = document.getElementById('tab-card');
+    const upiPanel = document.getElementById('upi-panel');
+    const cardPanel = document.getElementById('card-panel');
+    const resultEl = document.getElementById('payment-result');
+
+    tabUpi.addEventListener('click', ()=>{
+        tabUpi.classList.add('active'); tabCard.classList.remove('active');
+        upiPanel.style.display='block'; cardPanel.style.display='none'; resultEl.textContent='';
+    })
+    tabCard.addEventListener('click', ()=>{
+        tabCard.classList.add('active'); tabUpi.classList.remove('active');
+        cardPanel.style.display='block'; upiPanel.style.display='none'; resultEl.textContent='';
+    })
+
+    // simple UPI validation: basic pattern username@bank
+    document.getElementById('upi-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        const upi = document.getElementById('upi-id').value.trim();
+        const msg = document.getElementById('upi-msg');
+        const re = /^[a-zA-Z0-9.\-]{2,}@[a-zA-Z]{2,}$/;
+        if(!re.test(upi)){
+            msg.textContent = 'Please enter a valid UPI ID (e.g. name@bank)';
+            msg.style.color = 'red';
+            resultEl.textContent='';
+            return;
+        }
+        msg.textContent = '';
+        // simulate success
+        resultEl.style.color = 'green';
+        resultEl.textContent = 'UPI payment successful (demo). Thank you!';
+    })
+
+    // Card validation: Luhn + expiry + cvv
+    function luhnCheck(num){
+        const s = num.replace(/\s+/g,'');
+        let sum=0, alt=false;
+        for(let i=s.length-1;i>=0;i--){ let n=parseInt(s[i],10); if(alt){ n*=2; if(n>9) n-=9 } sum+=n; alt=!alt }
+        return sum%10===0;
+    }
+
+    document.getElementById('card-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        const num = document.getElementById('card-number').value.replace(/\s+/g,'');
+        const exp = document.getElementById('card-expiry').value.trim();
+        const cvv = document.getElementById('card-cvv').value.trim();
+        const msg = document.getElementById('card-msg');
+
+        if(!/^\d{12,19}$/.test(num) || !luhnCheck(num)){
+            msg.textContent = 'Invalid card number'; msg.style.color='red'; resultEl.textContent=''; return;
+        }
+        if(!/^\d{2}\/\d{2}$/.test(exp)){ msg.textContent='Expiry must be MM/YY'; msg.style.color='red'; resultEl.textContent=''; return }
+        const parts = exp.split('/');
+        const mm = parseInt(parts[0],10), yy = parseInt(parts[1],10)+2000;
+        const expDate = new Date(yy, mm-1, 1);
+        const now = new Date(); now.setDate(1);
+        if(mm<1 || mm>12 || expDate < now){ msg.textContent='Card expired or invalid expiry'; msg.style.color='red'; resultEl.textContent=''; return }
+        if(!/^\d{3,4}$/.test(cvv)){ msg.textContent='Invalid CVV'; msg.style.color='red'; resultEl.textContent=''; return }
+
+        msg.textContent='';
+        resultEl.style.color='green';
+        resultEl.textContent='Card payment successful (demo). Thank you!';
+    })
+    </script>
+
+</body>
+</html>
